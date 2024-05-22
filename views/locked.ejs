@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/locked.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/makepost" method="post">
+            <textarea name="content" id="textBox" placeholder="Enter Your post"></textarea>
+            <input type="submit" value="Post">
+        </form>
+    </div>
+
+    <div class="container2">
+        <% user.post.slice().reverse().forEach(function(post) { %>
+            <div class="box">
+                <div class="uppertext">
+                    @<%= user.name %>
+                </div>
+                <div class="downtext">
+                   <p><%= post.content %></p> 
+                        <div class="btnss">
+                            <a href="/edit/<%= post._id %>">Edit</a>
+                            <form action="/delete/<%= post._id %>" method="post" style="display: inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+</body>
+
+</html>

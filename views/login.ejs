@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Login page</title>
+</head>
+
+<body>
+    <div id="page1">
+        <div class="container">
+            <h3>Login</h3>
+            <form id="loginForm" method="post" action="/login" onsubmit="return validateForm()">
+                <input type="email" placeholder="Enter email" name="email" id="email" required>
+                <input type="password" placeholder="Enter password" name="password" id="password" required>
+                <input id="btn" type="submit" value="Login">
+            </form>
+            <div class="btns">
+                <a href="/">Sign Up ?</a>
+                <a href="/edit">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                alert("Both email and password are required.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

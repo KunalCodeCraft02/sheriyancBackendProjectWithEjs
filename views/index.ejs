@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Registration page</title>
+</head>
+
+<body>
+    <div id="page1">
+        <div class="container">
+            <h3>Sign In</h3>
+            <form id="registerForm" method="post" action="/register" onsubmit="return validateForm()">
+                <input type="text" placeholder="Enter name" name="name" id="name" required>
+                <input type="number" placeholder="Enter age" name="age" id="age" required>
+                <input type="email" placeholder="Enter email" name="email" id="email" required>
+                <input type="password" placeholder="Enter password" name="password" id="password" required>
+                <input id="btn" type="submit" value="Create">
+            </form>
+            <div class="btns">
+                <a href="/login">Login ?</a>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (!name || !age || !email || !password) {
+                alert("All fields are required.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

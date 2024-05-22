@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: res;
+            src: url(/asstes/l\ \(1\));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: #111;
+            color: white;
+            font-family: res;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .container {
+            margin-top: 20px;
+
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+            width: 300px;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            font-size: 1.2vw;
+        }
+
+        .boxes {
+            height: 20vw;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 10vw;
+            flex-wrap: wrap;
+            gap: 50px;
+            
+        }
+
+        .box {
+            height: 15vw;
+            width: 25vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid white;
+            
+        }
+
+        .upperText {
+            margin: 10px;
+        }
+
+        .downText {
+            padding-bottom: 2vw;
+        }
+
+        .downText p {
+            margin: 10px;
+        }
+
+        .downText a {
+            margin-left: 8px;
+        }
+
+        h4 {
+            padding-top: 1vw;
+        }
+        .proPic{
+            height: 4vw;
+            width: 5vw;
+            
+        }
+        .proPic img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/edit/<%= usr._id%>" method="post">
+            <textarea name="contentEdit" placeholder="Enter what you want"><%= usr.content %></textarea>
+            <input type="submit" placeholder="submit">
+        </form>
+    </div>
+
+   
+</body>
+
+</html>
